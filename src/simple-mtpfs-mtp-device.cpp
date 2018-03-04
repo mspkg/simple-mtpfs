@@ -150,7 +150,6 @@ bool MTPDevice::connect_priv(int dev_no, const std::string &dev_file)
     StreamHelper::off();
     m_device = LIBMTP_Open_Raw_Device_Uncached(raw_device);
     StreamHelper::on();
-    free(static_cast<void*>(raw_devices));
 
     if (!m_device) {
         LIBMTP_Dump_Errorstack(m_device);
